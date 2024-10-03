@@ -1,0 +1,23 @@
+{% load static %}
+<div class="tariff-block provider" data-id="{{ tariff.id }}" data-type="{{ tariff_type }}">
+    <h3>{{ tariff.name }}</h3>
+    <p>Provider: {{ tariff.provider }}</p>
+    {% if tariff_type == 'mobile' || tariff_type == 'homenet_tv_mobile_tariff' %}
+    <p>GB: {{ tariff.gb }}</p>
+    <p>SMS: {{ tariff.sms }}</p>
+    <p>Min: {{ tariff.min }}</p>
+    {% endif %}
+    {% if tariff_type == 'homenet_tv_mobile_tariff' || tariff_type == 'homenet_tariff' || tariff_type == 'homenet_tv_tariff' %}
+    <p>Speed: {{ tariff.speed }}</p>
+    {% endif %}
+    {% if tariff_type == 'tv_tariff' || tariff_type == 'homenet_tv_mobile_tariff' || tariff_type == 'homenet_tv_tariff' %}
+    <p>Number of Channels: {{ tariff.number_of_channels }}</p>
+    {% endif %}
+    <p>Cost: ${{ tariff.cost }}</p>
+    <p>City: {{ tariff.city.name }}</p>
+    <p>{{ tariff.additional_info }}</p>
+    {% if is_admin %}
+    <button class="edit-btn">Edit</button>
+    <button class="delete-btn">Delete</button>
+    {% endif %}
+</div>

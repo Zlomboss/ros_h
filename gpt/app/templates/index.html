@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% csrf_token %}
+<div class="header">
+    <h1>Арктический телеком</h1>
+    <div class="test">
+        <label for="city-select">Город:</label>
+        <select class="city-select" id="city-select">
+        </select> 
+    </div>
+
+</div>
+
+<div class="cont">
+
+<div class="container">
+    <div class="info-block">Работаем с 6 провайдерами</div>
+    <div class="info-block">Экономим Ваше время</div>
+    <div class="info-block">Ищем тарифы по любому адресу</div>
+    <div class="info-block">Даем актуальную информацию</div>
+</div>
+
+
+<div id="mobile-tariff-header">
+    <div class='tariff-type-header'>
+        <h2>Мобильная связь</h2>
+        <div class="right">
+            <label for="mobile-sort-options">Сортировка:</label>
+            <div class="sort-select-wrapper">
+                <select class="sort-select" id="mobile-sort-options">
+                    <option value="cost">Цена</option>
+                    <option value="gb">ГБ</option>
+                    <option value="sms">СМС</option>
+                    <option value="min">Минута</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-tariff-list" class="container-tar">    
+    </div>
+</div>
+
+<div id="tv-tariff-header">
+    <div class='tariff-type-header'>
+        <h2>ТВ</h2>
+        <div class="right">
+        <label for="tv-sort-options">Сортировка:</label>
+        <div class="sort-select-wrapper">
+            <select  class="sort-select" id="tv-sort-options">
+                <option value="cost">Цена</option>
+                <option value="number_of_channels">Количество каналов</option>
+            </select>
+        </div>
+    </div>
+    </div>  
+    <div id="tv-tariff-list" class="container-tar">
+    </div>
+</div>
+
+<div id="homenet-tariff-header">
+    <div class='tariff-type-header'>
+    <h2>Домашний интернет</h2>
+    <div class="right">
+    <label for="homenet-sort-options">Сортировка:</label>
+    <div class="sort-select-wrapper">
+    <select class="sort-select" id="homenet-sort-options">
+        <option value="cost">Цена</option>
+        <option value="speed">Скорость</option>
+    </select>
+    </div>
+    </div>
+    </div>
+    <div id="homenet-tariff-list" class="container-tar">
+        <!-- Mobile tariffs will be loaded here via AJAX -->
+    </div>
+</div>
+
+<div id="homenet-tv-tariff-header">
+    <div class='tariff-type-header'>
+    <h2>Домашний интернет + ТВ</h2>
+    <div class="right">
+    <label for="homenet-tv-sort-options">Сортировка:</label>
+    <div class="sort-select-wrapper">
+    <select  class="sort-select" id="homenet-tv-sort-options">
+        <option value="cost">Цена</option>
+        <option value="speed">Скорость</option>
+        <option value="number_of_channels">Количество каналов</option>
+    </select>
+    </div>
+    </div>
+    </div>
+    <div id="homenet-tv-tariff-list" class="container-tar">
+        <!-- Mobile tariffs will be loaded here via AJAX -->
+    </div>
+</div>
+
+<div id="homenet-tv-mobile-tariff-header">
+    <div class='tariff-type-header'>
+    <h2>Домашний интернет + ТВ + Мобильная связь</h2>
+    <div class="right">
+    <label for="homenet-tv-mobile-sort-options">Сортировка:</label>
+    <div class="sort-select-wrapper">
+    <select class="sort-select" id="homenet-tv-mobile-sort-options">
+        <option value="cost">Цена</option>
+        <option value="gb">ГБ</option>
+        <option value="sms">СМС</option>
+        <option value="min">Минуты</option>
+        <option value="speed">Скорость</option>
+        <option value="number_of_channels">Количество каналов</option>
+    </select>
+</div>
+</div>
+</div>
+    <div id="homenet-tv-mobile-tariff-list" class="container-tar">
+        <!-- Mobile tariffs will be loaded here via AJAX -->
+    </div>
+</div>
+
+
+<!-- User Text and Backend Response -->
+<div class='inp' id="user-text-display"></div>
+<div id="backend-response-display">
+    <div id="backend-response"></div>
+</div>
+
+<!-- Input Field and Ask Button -->
+<div id="user-input-section">
+    <input type="text" id="user-input" class='inp' placeholder="Введите ваш запрос">
+    <button class='ask-button'id="ask-button">Спросить GigaChat</button>
+</div>
+
+</div>
+
+<div class="footer">
+    <p>© 2024  All Rights Reserved.</p>
+</div>
+
+<script src="{% static 'js/main.js' %}"></script>
+{% endblock %}

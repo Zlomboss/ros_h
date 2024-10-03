@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Admin - Manage Tariffs</h1>
+
+<h2>Manage Cities</h2>
+<button id="add-city-btn">Add City</button>
+<div id="city-form" style="display:none;">
+    <h3 id="city-form-title">Add City</h3>
+    <form id="city-form-element">
+        {% csrf_token %}
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br>
+        <input type="hidden" name="id">
+        <button type="submit">Submit</button>
+        <button type="button" class="cancel-btn">Cancel</button>
+    </form>
+</div>
+<div id="city-list">
+    <!-- Cities will be loaded here via AJAX -->
+</div>
+
+<h2>Manage Home Types</h2>
+<button id="add-home-type-btn">Add Home Type</button>
+<div id="home-type-form" style="display:none;">
+    <h3 id="home-type-form-title">Add Home Type</h3>
+    <form id="home-type-form-element">
+        {% csrf_token %}
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br>
+        <input type="text" name="in_name" required><br>
+        <input type="hidden" name="id">
+        <button type="submit">Submit</button>
+        <button type="button" class="cancel-btn">Cancel</button>
+    </form>
+</div>
+<div id="home-type-list">
+    <!-- Cities will be loaded here via AJAX -->
+</div>
+
+<h2>Manage Mobile Tariffs</h2>
+<button id="add-mobile-tariff-btn">Add Mobile Tariff</button>
+<div id="mobile-tariff-form" style="display:none;">
+    <h3 id="mobile-tariff-form-title">Add Mobile Tariff</h3>
+    <form id="mobile-tariff-form-element">
+        {% csrf_token %}
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br>
+        <label>Provider:</label><br>
+        <input type="text" name="provider" required><br>
+        <label>GB</label><br>
+        <input type="number" name="gb" required><br>
+        <label>SMS</label><br>
+        <input type="number" name="sms" required><br>
+        <label>Min</label><br>
+        <input type="number" name="min" required><br>
+        <label>Cost:</label><br>
+        <input type="number" name="cost" step="0.01" required><br>
+        <label>City:</label><br>
+        <select name="city_id" required></select><br>
+        <label>Additional Info:</label><br>
+        <textarea name="additional_info"></textarea><br>
+        <input type="hidden" name="id">
+        <button type="submit">Submit</button>
+        <button type="button" class="cancel-btn">Cancel</button>
+    </form>
+</div>
+<div id="mobile-tariff-list">
+    <!-- Mobile tariffs will be loaded here via AJAX -->
+</div>
+
+<h2>Manage TV Tariffs</h2>
+<button id="add-tv-tariff-btn">Add TV Tariff</button>
+<div id="tv-tariff-form" style="display:none;">
+    <h3 id="tv-tariff-form-title">Add TV Tariff</h3>
+    <form id="tv-tariff-form-element">
+        {% csrf_token %}
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br>
+        <label>Provider:</label><br>
+        <input type="text" name="provider" required><br>
+        <label>Speed:</label><br>
+        <input type="number" name="speed"><br>
+        <label>GB:</label><br>
+        <input type="number" name="gb"><br>
+        <label>SMS:</label><br>
+        <input type="number" name="sms"><br>
+        <label>Min:</label><br>
+        <input type="number" name="min"><br>
+        <label>Number of Channels:</label><br>
+        <input type="number" name="number_of_channels"><br>
+        <label>Cost:</label><br>
+        <input type="number" name="cost" step="0.01" required><br>
+        <label>City:</label><br>
+        <select name="city_id" required></select><br>
+        <label>HomeType:</label><br>
+        <select name="home_type_id" required></select><br>
+        <label>Additional Info:</label><br>
+        <textarea name="additional_info"></textarea><br>
+        <input type="hidden" name="id">
+        <button type="submit">Submit</button>
+        <button type="button" class="cancel-btn">Cancel</button>
+    </form>
+</div>
+<div id="tv-tariff-list">
+    <!-- TV tariffs will be loaded here via AJAX -->
+</div>
+
+<script src="{% static 'js/admin.js' %}"></script>
+{% endblock %}

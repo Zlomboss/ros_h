@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* margin: 20px; */
+    background-color: #f4f4f4;
+}
+
+.cont{
+    margin: 30px;
+}
+
+.tariff-block {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    background-color: rgb(255, 51, 0);
+}
+
+.tariff-block.selected {
+    border-color: green;
+    border-width: 4px;
+}
+
+#user-input-section {
+    margin-top: 20px;
+}
+
+#user-input {
+    width: 70%;
+    padding: 8px;
+    margin-right: 10px;
+}
+
+#ask-button {
+    padding: 8px 16px;
+}
+
+#user-text-display, #backend-response-display {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.provider {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+}
+.provider h3 {
+    color: #ff0078;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.provider p {
+    font-size: 17px;
+}
+
+.price {
+    font-size: 30px;
+    color: #333;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    border-width: 2px;
+    border-color: #ff0078;
+    background-color: #f4f4f4;
+}
+
+.container-tar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.info-block {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: #ff0078;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.sort-select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 150px;
+}
+
+.sort-select {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 38px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    padding: 10px 40px 10px 20px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.sort-select-wrapper::after {
+    content: '▼';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #999;
+}
+
+.sort-select:focus {
+    border-color: #ff0078;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.sort-select:hover {
+    border-color: #ff0078;
+}
+
+.sort-select:focus-visible {
+    outline: none;
+}
+
+.city-select {
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    background-color: #fff;
+    /* color: #666; */
+    color: black;
+    cursor: pointer;
+}
+
+.header {
+    background-color: #ff0078; /* Голубой контрастный цвет */
+    color: white;
+    padding: 30px;
+    display: flex;              /* Используем flexbox */
+    justify-content: center;    /* Центровка содержимого */
+    align-items: center;        /* Вертикальная центровка */
+    position: relative;
+    /* border-bottom: 1px solid #ccc; */
+}
+
+.tariff-type-header{
+    background-color: #f4f4f4;
+    padding: 30px;
+    display: flex;              /* Используем flexbox */
+    justify-content: center;    /* Центровка содержимого */
+    align-items: center;        /* Вертикальная центровка */
+    position: relative;
+}
+.tariff-type-header h2{
+    font-size: 40px;
+    color: #ff0078;
+}
+
+.test {
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    position: absolute; /* Позиционирование кнопки влево */
+    right: 20px;         /* Расстояние от левого края */
+    top: 50%;           /* Вертикальная центровка */
+    transform: translateY(-50%);
+    z-index: 1000;      /* Поверх всего контента */
+}
+
+.right{
+    font-size: 20px;
+    position: absolute;
+    right: 20px;         /* Расстояние от левого края */
+    top: 50%;           /* Вертикальная центровка */
+    transform: translateY(-50%);
+    z-index: 1000;      /* Поверх всего контента */
+}
+
+.footer {
+    background-color: #ff0078; /* Голубой контрастный цвет */
+    color: white;
+    padding: 40px;
+    display: flex;              /* Используем flexbox */
+    justify-content: center;    /* Центровка содержимого */
+    align-items: center;        /* Вертикальная центровка */
+    position: relative; 
+}
+
+.ask-button {
+    background-color: #ff0078;
+    color: white;
+    border-radius: 10px;
+    border-width: 1px;
+    height: 46px; 
+    padding: 10px; 
+    font-size: 18px; 
+}
+
+.inp {
+    height: 46px; /* Увеличивает высоту поля */
+    padding: 10px; /* Добавляет внутренние отступы, чтобы текст был не слишком близко к краям */
+    font-size: 18px; /* Увеличивает размер шрифта внутри поля */
+    border: 1px solid #ccc; /* Граница вокруг поля */
+    border-radius: 5px; /* Закругленные углы */
+}
+
+.inp2 {
+    height: 46px; /* Увеличивает высоту поля */
+    padding: 10px; /* Добавляет внутренние отступы, чтобы текст был не слишком близко к краям */
+    font-size: 18px; /* Увеличивает размер шрифта внутри поля */
+    border: 1px solid #ccc; /* Граница вокруг поля */
+    border-radius: 5px; /* Закругленные углы */
+    display: flex;
+}
+
+.container-tar2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+
+}
